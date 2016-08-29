@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('test', function () {
     return view('layout.contoh');
 });
+
+Route::get('/', ['uses'=>'HomeCtrl@index', 'as'=>'home']);

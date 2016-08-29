@@ -2,7 +2,7 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <script src="{!! asset('js/jquery-1.12.2.js') !!}"></script>
 
     <!-- Bootstrap JavaScript -->
     <script src="{!! asset('js/bootstrap.min.js') !!}"></script>
@@ -18,8 +18,12 @@
             // Example Call anotherFunction
             appMaster.anotherFunction();
         });
-    </script>
+    </script>   
 
+    @yield('js')
+
+    <!-- Include this after the sweet alert js file -->
+    @include('sweet::alert')
 </body>
 
 </html>

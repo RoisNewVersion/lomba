@@ -10,7 +10,7 @@ body {
   transition: all .25s ease-in-out;
 }
 #wrapper .content {
-  padding: 5px 15px;
+  padding: 17px 15px;
 }
 #wrapper.toggled {
   padding-left: 0;
@@ -28,7 +28,7 @@ body {
   position: fixed;
   opacity: .99;
   left: 0;
-  background: #64676c;
+  background: #673AB7;
   height: 100%;
   overflow-y: auto;
   -webkit-transition: all .25s ease-in-out;
@@ -48,12 +48,13 @@ body {
 .main-nav li {
   line-height: 40px;
   padding: 0 15px;
-  border-bottom: 1px solid #585858;
+  border-bottom: 1px solid #88ea15;
   box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.12);
 }
 .main-nav li.main-search {
   border: none;
   box-shadow: none;
+  padding-top: 7px;
 }
 .main-nav li.main-search .search-input.form-control {
   border-radius: 0;
@@ -75,6 +76,7 @@ body {
   font-size: 18px;
   border: none;
   box-shadow: none;
+  background: #FF9800;
 }
 .main-nav li a {
   color: #fff;
@@ -83,6 +85,44 @@ body {
   text-decoration: none;
 }
 
+/*============custom ku===========*/
+.toggle-atas{
+  background-color: #E91E63;
+  opacity: 80;
+  padding: 10px;
+  margin: 0px;
+  position: fixed;
+  width: 100%;
+}
+.child-menu{
+  /*display: none;*/
+}
+
+.parent-menu a{
+  
+}
+.main-nav-group{
+  list-style-type: none;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+  margin-bottom: 0;
+}
+.main-nav-group li {
+  line-height: 40px;
+  padding: 0 15px;
+  border-bottom: 1px solid #88ea15;
+  box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.12);
+}
+.main-nav-group li a {
+    color: #fff;
+    display: block;
+    font-weight: normal;
+    text-decoration: none;
+}
+/*end custom ku*/
 @media (max-width: 768px) {
   #wrapper {
     padding-left: 0;

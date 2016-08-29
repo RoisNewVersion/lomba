@@ -7,7 +7,7 @@
             <ul class="main-nav">
                 <!-- Your Logo Or Site Name -->
                 <li class="nav-brand">
-                    <a href="#"><img src="img/logo.png" alt=""></a>
+                    <a href="#"><img src="{{asset('img/logo.png') }}" alt=""></a>
                 </li>
                 <!-- Search -->
                 <li class="main-search">
@@ -17,7 +17,8 @@
                     </form>
                 </li>
                 <li>
-                    <a href="#">- Bootstrap</a>
+                	
+                    <a href="#"><i class="fa fa-map"></i> Bootstrap</a>
                 </li>
                 <li>
                     <a href="#">- Mail Inbox</a>
@@ -37,10 +38,23 @@
                 <li>
                     <a href="#">- App Views</a>
                 </li>
-                <li>
-                    <a href="#">- Another Menu item</a>
-                </li>
+
+                
             </ul>
+            <ul class="main-nav-group">
+            	<li class="">
+                    <a href="#">- Another Menu item</a>
+                    
+                </li>
+                <ul>
+                	<li>hahaha</li>
+                </ul>
+            </ul>
+
+
         </aside>
         {{-- menu toggle --}}
-        <button style="position: fixed;" id="menuToggler" class="btn btn-primary">Press me to toggle</button>
+        <div class="toggle-atas">
+        	<a id="menuToggler" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a>
+        </div>
+        {{-- <button style="position: fixed;" id="menuToggler" class="btn btn-primary">Press me to toggle</button> --}}
