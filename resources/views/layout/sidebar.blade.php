@@ -58,6 +58,6 @@
         {{-- menu toggle --}}
         <div class="toggle-atas">
         	<a id="menuToggler" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a>
-            <a class="pull-right"> Logout></a>
+            <a href="{{route('logout')}}" class="pull-right"> <i class="fa fa-sign-out"></i> Logout</a>
         </div>
         {{-- <button style="position: fixed;" id="menuToggler" class="btn btn-primary">Press me to toggle</button> --}}

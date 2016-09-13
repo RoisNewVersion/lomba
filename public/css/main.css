@@ -4,13 +4,13 @@ body {
 }
 
 #wrapper {
-  padding-left: 250px;
+  padding-left: 200px;
   -webkit-transition: all .25s ease-in-out;
   -moz-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
 }
 #wrapper .content {
-  padding: 17px 15px;
+  padding: 45px 20px 15px 20px;
 }
 #wrapper.toggled {
   padding-left: 0;
@@ -24,7 +24,7 @@ body {
 }
 
 #sideBar {
-  width: 250px;
+  width: 200px;
   position: fixed;
   opacity: .99;
   left: 0;
@@ -94,6 +94,10 @@ body {
   position: fixed;
   width: 100%;
 }
+
+.toggle-atas > a{
+  color: white;
+}
 .child-menu{
   /*display: none;*/
 }
@@ -122,13 +126,23 @@ body {
     font-weight: normal;
     text-decoration: none;
 }
+
+.content-info-up > h3{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 23px;
+  margin: 0px 0 5px 0;
+}
+.content-info-up > a{
+  margin: 2px 0px 5px 0px;
+
+}
 /*end custom ku*/
 @media (max-width: 768px) {
   #wrapper {
     padding-left: 0;
   }
   #wrapper.toggled {
-    padding-left: 250px;
+    padding-left: 200px;
   }
   #wrapper.toggled #sideBar {
     left: 0;
