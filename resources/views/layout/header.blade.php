@@ -26,6 +26,9 @@
     <!-- Canonical -->
     <link rel="canonical" href="">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Lomba</title>
 
     <!-- Bootstrap CSS -->
@@ -35,6 +38,8 @@
 
     <!-- Main Styles CSS -->
     <link href="{!! asset('css/main.css') !!}" rel="stylesheet">
+    <!-- Sweet alert -->
+    <link href="{!! asset('css/sweetalert.css') !!}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

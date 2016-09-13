@@ -21,13 +21,13 @@
                     <a href="#"><i class="fa fa-map"></i> Bootstrap</a>
                 </li>
                 <li>
-                    <a href="#">- Mail Inbox</a>
+                    <a href="{{route('rw.index')}}">- RW</a>
                 </li>
                 <li>
-                    <a href="#">- Form Controls</a>
+                    <a href="{{route('rt.index')}}">- RT</a>
                 </li>
                 <li>
-                    <a href="#">- UI Elements</a>
+                    <a href="{{route('peserta.index')}}">- Peserta</a>
                 </li>
                 <li>
                     <a href="#">- Calendar / Dates</a>
@@ -38,7 +38,9 @@
                 <li>
                     <a href="#">- App Views</a>
                 </li>
-
+                <li>
+                    <a href="{{route('logout')}}">- Logout</a>
+                </li>
                 
             </ul>
             <ul class="main-nav-group">
@@ -56,5 +58,6 @@
         {{-- menu toggle --}}
         <div class="toggle-atas">
         	<a id="menuToggler" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a>
+            <a class="pull-right"> Logout></a>
         </div>
         {{-- <button style="position: fixed;" id="menuToggler" class="btn btn-primary">Press me to toggle</button> --}}

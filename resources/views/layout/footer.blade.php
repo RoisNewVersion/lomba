@@ -9,6 +9,8 @@
 
     <!-- Custom JavaScript -->
     <script src="{!! asset('js/custom.js') !!}"></script>
+    <!-- sweetalert -->
+    <script src="{!! asset('js/sweetalert.min.js') !!}"></script>
 
     <!-- Call functions on document ready -->
     <script>
