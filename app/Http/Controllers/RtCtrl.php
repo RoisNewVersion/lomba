@@ -44,7 +44,13 @@ class RtCtrl extends Controller
         // print_r($request->all());
         // validasi input
         $this->validate($request, ['nama_rw'=>'required|integer', 'nama_rt'=>'required|integer']);
-
+        // validasi unique record
+        $unique = Rt::where('rw_id', '=', $request->input('nama_rw'))->where('nama_rt', '=', $request->input('nama_rt'))->count();
+        if ($unique > 0 ) {
+            Alert::error('Data sudah ADA !', 'Oh snap!');
+            return redirect()->back();
+        }
+        // save
         if (Rt::create(['rw_id'=>$request->input('nama_rw'), 'nama_rt'=>$request->input('nama_rt')])) {
             Alert::success('Berhasil simpan', 'Oke berhasil');
             return redirect()->route('rt.index');
@@ -88,7 +94,7 @@ class RtCtrl extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, ['nama_rw'=>'required|integer', 'nama_rt'=>'required|integer']);
+        $this->validate($request, ['nama_rw'=>'required|integer|unique:rt,nama_rt', 'nama_rt'=>'required|integer']);
         $rt = Rt::findOrFail($id);
 
         if ($rt->update(['rw_id'=>$request->input('nama_rw'), 'nama_rt'=>$request->input('nama_rt')])) {
