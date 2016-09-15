@@ -7,7 +7,7 @@
             <ul class="main-nav">
                 <!-- Your Logo Or Site Name -->
                 <li class="nav-brand">
-                    <a href="#"><img src="{{asset('img/logo.png') }}" alt=""></a>
+                    <a href="{{route('home')}}"><img src="{{asset('img/logo.png') }}" alt=""></a>
                 </li>
                 <!-- Search -->
                 <li class="main-search">
@@ -21,14 +21,15 @@
                     <a href="#"><i class="fa fa-map"></i> Bootstrap</a>
                 </li>
                 <li>
-                    <a href="{{route('rw.index')}}">- RW</a>
+                    <a href="{{route('peserta.index')}}"><i class="fa fa-users"></i> Peserta</a>
                 </li>
                 <li>
-                    <a href="{{route('rt.index')}}">- RT</a>
+                    <a href="{{route('rw.index')}}"> <i class="fa fa-code-fork"></i> RW</a>
                 </li>
                 <li>
-                    <a href="{{route('peserta.index')}}">- Peserta</a>
+                    <a href="{{route('rt.index')}}"><i class="fa fa-terminal"></i> RT</a>
                 </li>
+                
                 <li>
                     <a href="#">- Calendar / Dates</a>
                 </li>

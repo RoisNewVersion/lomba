@@ -39,7 +39,7 @@ class RwCtrl extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['nama_rw'=>'required|unique:rw,nama_rw']);
+        $this->validate($request, ['nama_rw'=>'required|integer|unique:rw,nama_rw']);
 
         if (Rw::create(['nama_rw'=>strtoupper($request->input('nama_rw'))])) {
             Alert::success('Berhasil simpan', 'Oke berhasil');

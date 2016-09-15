@@ -29,7 +29,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Lomba</title>
+    <title>
+        @if(Request::segment(1))
+            Lomba - {{ strtoupper(Request::segment(1))}}
+        @else
+            Lomba
+        @endif
+    
+    </title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
