@@ -47,6 +47,11 @@
     <link href="{!! asset('css/main.css') !!}" rel="stylesheet">
     <!-- Sweet alert -->
     <link href="{!! asset('css/sweetalert.css') !!}" rel="stylesheet">
+    <!-- DataTable -->
+    <link href="{!! asset('css/datatables.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/responsive.bootstrap.min.css') !!}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{!! asset('css/nprogress.css') !!}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -27,10 +27,11 @@ class AuthCtrl extends Controller
     // post login
     public function postLogin(Request $request)
     {
+        // dd($request->all());
     	// validasi input
-    	$this->validate($request, ['email'=>'required|email', 'password'=>'required']);
+    	$this->validate($request, ['name'=>'required', 'password'=>'required']);
     	// inputan
-    	$inputan = ['email'=>$request->input('email'), 'password'=>$request->input('password')];
+    	$inputan = ['name'=>$request->input('name'), 'password'=>$request->input('password')];
     	// print_r($request->all());
     	if (Auth::attempt($inputan)) {
     		Alert::success('Berhasil Login', 'Selamat ya!');

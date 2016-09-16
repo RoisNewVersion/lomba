@@ -32,6 +32,7 @@ Route::group(['middleware'=>'auth'], function() {
 	Route::resource('rt', 'RtCtrl');
 	// resource for peserta
 	Route::resource('peserta', 'pesertaCtrl');
+	Route::get('ajax_peserta', ['as'=>'ajax_peserta', 'uses'=>'pesertaCtrl@ajax_peserta']);
 });
 // Route::get('/home', 'HomeController@index');
 // halaman login
