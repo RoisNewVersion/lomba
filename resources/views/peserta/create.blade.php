@@ -17,7 +17,7 @@
 
                 <div class="form-group {{ $errors->has('nama_peserta') ? ' has-error' : '' }}">
                     <label class="control-label" for="nama_peserta">Nama Peserta</label>
-                    <input class="form-control" type="text" name="nama_peserta" id="nama_peserta" value="{{old('nama_peserta')}}" placeholder="Nama Peserta">
+                    <input class="form-control" type="text" name="nama_peserta" id="nama_peserta" value="{{old('nama_peserta')}}" placeholder="Nama Peserta" required="reuired">
 
                     {!! $errors->has('nama_peserta') ? '<span class="help-block">'.$errors->first('nama_peserta').'</span>' : '' !!}
                 </div>
@@ -25,7 +25,7 @@
                 <div class="form-group {{ $errors->has('jk') ? ' has-error' : '' }}">
                     <label class="control-label" for="jk">Jenis Kelamin</label>
                     
-                    <select name="jk" class="form-control">
+                    <select name="jk" class="form-control" required="reuired">
                         <option>Pilih</option>
 
                         @foreach($jks as $jk => $val)

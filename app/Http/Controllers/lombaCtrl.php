@@ -5,24 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Rt;
-use App\Rw;
-use App\User;
+use Yajra\Datatables\Facades\Datatables;
 use Alert;
-use Auth;
+use App\JenisLomba;
 
-class RtCtrl extends Controller
+class lombaCtrl extends Controller
 {
-    public function __construct()
-    {
-        // $id = Auth::user()->id;
-        // $authUser = User::find($id);
-        // if(!$authUser->hasRole('administrator')){
-        //     return abort(404);
-        // }
-        // $this->middleware('acl');
-
-    }
     /**
      * Display a listing of the resource.
      *
@@ -30,13 +18,8 @@ class RtCtrl extends Controller
      */
     public function index()
     {
-        // $id = Auth::user()->id;
-        // $authUser = User::find($id);
-        // if(!$authUser->hasRole('administrator')){
-        //     return abort(404);
-        // }
-        $rts = Rt::orderBy('rw_id', 'asc')->get();
-        return view('rt.index', compact('rts'));
+        $lombas = JenisLomba::orderBy('waktu', 'desc')->get();
+        return view('lomba.index', compact('lombas'));
     }
 
     /**
@@ -46,8 +29,7 @@ class RtCtrl extends Controller
      */
     public function create()
     {
-        $rws = Rw::pluck('nama_rw', 'id_rw');
-        return view('rt.create', compact('rws'));
+        return view('lomba.create');
     }
 
     /**
@@ -58,24 +40,28 @@ class RtCtrl extends Controller
      */
     public function store(Request $request)
     {
-        // print_r($request->all());
-        // validasi input
-        $this->validate($request, ['nama_rw'=>'required|integer', 'nama_rt'=>'required|integer']);
-        // validasi unique record
-        $unique = Rt::where('rw_id', '=', $request->input('nama_rw'))->where('nama_rt', '=', $request->input('nama_rt'))->count();
-        if ($unique > 0 ) {
+        $this->validate($request, ['nama_lomba'=>'required', 'waktu'=>'required', 'keterangan'=>'required']);
+        $jen = JenisLomba::where('nama_lomba', '=', strtoupper($request->input('nama_lomba')))
+            ->where('waktu', '=', $request->input('waktu'))->count();
+
+        if ($jen > 0 ) {
             Alert::error('Data sudah ADA !', 'Oh snap!');
-            return redirect()->back();
+            return redirect()->back()->withInput();
         }
-        // save
-        if (Rt::create(['rw_id'=>$request->input('nama_rw'), 'nama_rt'=>$request->input('nama_rt')])) {
+
+        $dataInput = [
+            'nama_lomba'=>strtoupper($request->input('nama_lomba')),
+            'waktu'=> $request->input('waktu'),
+            'keterangan'=>$request->input('keterangan')
+            ];
+
+        if (JenisLomba::create($dataInput)) {
             Alert::success('Berhasil simpan', 'Oke berhasil');
-            return redirect()->route('rt.index');
+            return redirect()->route('lomba.index');
         } else {
             Alert::error('Gagal simpan', 'Oh snap!');
             return redirect()->back();
         }
-        
     }
 
     /**
@@ -97,9 +83,8 @@ class RtCtrl extends Controller
      */
     public function edit($id)
     {
-        $rws = Rw::pluck('nama_rw', 'id_rw');
-        $rt = Rt::findOrfail($id);
-        return view('rt.edit', compact('rt', 'rws'));
+        $lomba = JenisLomba::findOrFail($id);
+        return view('lomba.edit', compact('lomba'));
     }
 
     /**
@@ -111,12 +96,22 @@ class RtCtrl extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, ['nama_rw'=>'required|integer|unique:rt,nama_rt', 'nama_rt'=>'required|integer']);
-        $rt = Rt::findOrFail($id);
+        $this->validate($request, ['nama_lomba'=>'required', 'waktu'=>'required', 'keterangan'=>'required']);
 
-        if ($rt->update(['rw_id'=>$request->input('nama_rw'), 'nama_rt'=>$request->input('nama_rt')])) {
+        $jen = JenisLomba::where('nama_lomba', '=', strtoupper($request->input('nama_lomba')))
+            ->where('waktu', '=', $request->input('waktu'))->count();
+
+        $dataInput = [
+            'nama_lomba'=>strtoupper($request->input('nama_lomba')),
+            'waktu'=> $request->input('waktu'),
+            'keterangan'=>$request->input('keterangan')
+            ];
+
+        $lomba = JenisLomba::findOrFail($id);
+
+        if ($lomba->update($dataInput)) {
             Alert::success('Berhasil update', 'Oke berhasil');
-            return redirect()->route('rt.index');
+            return redirect()->route('lomba.index');
         } else {
             Alert::error('Gagal update', 'Oh snap!');
             return redirect()->back();
@@ -131,10 +126,10 @@ class RtCtrl extends Controller
      */
     public function destroy($id)
     {
-        if (Rt::find($id)) {
-            if (Rt::destroy($id)) {
+        if (JenisLomba::find($id)) {
+            if (JenisLomba::destroy($id)) {
                 Alert::success('Berhasil hapus', 'Oke berhasil');
-                return redirect()->route('rt.index');
+                return redirect()->route('lomba.index');
             } else {
                 Alert::error('Gagal hapus', 'Oh snap!');
                 return redirect()->back();

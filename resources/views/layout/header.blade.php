@@ -50,6 +50,7 @@
     <!-- DataTable -->
     <link href="{!! asset('css/datatables.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/responsive.bootstrap.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/responsive.dataTables.min.css') !!}" rel="stylesheet">
     <!-- NProgress -->
     <link href="{!! asset('css/nprogress.css') !!}" rel="stylesheet">
 

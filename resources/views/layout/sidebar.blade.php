@@ -31,7 +31,7 @@
                 </li>
                 
                 <li>
-                    <a href="#">- Calendar / Dates</a>
+                    <a href="{{route('lomba.index')}}"><i class="fa fa-fighter-jet"></i> Jenis Lomba</a>
                 </li>
                 <li>
                     <a href="#">- Drag / Drop</a>
