@@ -32,8 +32,11 @@ Route::group(['middleware'=>['auth']], function() {
 		Route::resource('rw', 'RwCtrl');
 		// resource for rt
 		Route::resource('rt', 'RtCtrl');
-		// resource for rt
+		// resource for lomba
 		Route::resource('lomba', 'lombaCtrl');
+		// resource for pendaftaran
+		Route::resource('pendaftaran', 'pendaftaranCtrl');
+		Route::get('ajax_pendaftaran', ['as'=>'ajax_pendaftaran', 'uses'=>'pendaftaranCtrl@ajax_pendaftaran']);
 	// });
 	
 	// resource for peserta

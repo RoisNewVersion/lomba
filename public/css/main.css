@@ -28,7 +28,7 @@ body {
   position: fixed;
   opacity: .99;
   left: 0;
-  background: #673AB7;
+  background: #490e6d;
   height: 100%;
   overflow-y: auto;
   -webkit-transition: all .25s ease-in-out;
@@ -48,7 +48,7 @@ body {
 .main-nav li {
   line-height: 40px;
   padding: 0 15px;
-  border-bottom: 1px solid #88ea15;
+  border-bottom: 1px solid #fff;
   box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.12);
 }
 .main-nav li.main-search {

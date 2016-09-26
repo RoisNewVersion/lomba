@@ -34,7 +34,7 @@
                     <a href="{{route('lomba.index')}}"><i class="fa fa-fighter-jet"></i> Jenis Lomba</a>
                 </li>
                 <li>
-                    <a href="#">- Drag / Drop</a>
+                    <a href="{{route('pendaftaran.index')}}"><i class="fa fa-user-plus"></i> Pendaftaran</a>
                 </li>
                 <li>
                     <a href="#">- App Views</a>

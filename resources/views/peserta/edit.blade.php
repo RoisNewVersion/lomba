@@ -71,7 +71,7 @@
                 <div class="form-group">
                     <div class="col-sm-10 col-sm-offset-2">
                         <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
-                        <a href="{{route('rw.index')}}" class="btn btn-danger btn-sm"> Batal</a>
+                        <a href="{{route('peserta.index')}}" class="btn btn-danger btn-sm"> Batal</a>
                     </div>
                 </div>
             </form>

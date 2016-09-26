@@ -32,8 +32,8 @@ class pesertaCtrl extends Controller
     public function create()
     {
         $jks = ['L'=>'Laki-laki', 'P'=>'perempuan'];
-        $rts = Rt::pluck('id_rt', 'nama_rt');
-        $rws = Rw::pluck('id_rw', 'nama_rw');
+        $rts = Rt::pluck('nama_rt', 'id_rt');
+        $rws = Rw::pluck('nama_rw', 'id_rw');
 
         return view('peserta.create', compact('pesertas', 'rws', 'rts', 'jks'));
     }
@@ -98,8 +98,8 @@ class pesertaCtrl extends Controller
     {
         $peserta = Peserta::findOrFail($id);
         $jks = ['L'=>'Laki-laki', 'P'=>'perempuan'];
-        $rts = Rt::pluck('id_rt', 'nama_rt');
-        $rws = Rw::pluck('id_rw', 'nama_rw');
+        $rts = Rt::pluck('nama_rt', 'id_rt');
+        $rws = Rw::pluck('nama_rw', 'id_rw');
 
         return view('peserta.edit', compact('peserta', 'rws', 'rts', 'jks'));
     }
